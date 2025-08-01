@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>لیست من</title>
+    <style>
+        body { font-family: sans-serif; background-color: #f0f0f0; padding: 20px; direction: rtl; }
+        form { margin-bottom: 20px; }
+        input[type=text] { padding: 8px; width: 250px; }
+        input[type=submit] { padding: 8px 16px; }
+        ul { list-style: none; padding: 0; }
+        li { background: white; margin: 5px 0; padding: 10px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h2>لیست آیتم‌ها</h2>
+    <form action="/add" method="post">
+        <input type="text" name="name" placeholder="نام آیتم را وارد کنید">
+        <input type="submit" value="افزودن">
+    </form>
+    <ul>
+        {% for item in items %}
+            <li>{{ item[1] }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
